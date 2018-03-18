@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE6BFB48-042B-4E42-85F7-F86A945B9A2A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NajamAutaEF</RootNamespace>
+    <AssemblyName>NajamAutaEF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlavnaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlavnaForma.Designer.cs">
+      <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klijenti.cs">
+      <DependentUpon>NajamAutaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lokacije.cs">
+      <DependentUpon>NajamAutaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NajamAutaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NajamAutaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NajamAutaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NajamAutaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NajamAutaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NajamAutaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NovaLokacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaLokacija.Designer.cs">
+      <DependentUpon>NovaLokacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovaPrikolica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaPrikolica.Designer.cs">
+      <DependentUpon>NovaPrikolica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovaRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaRezervacija.Designer.cs">
+      <DependentUpon>NovaRezervacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoviKlijent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoviKlijent.Designer.cs">
+      <DependentUpon>NoviKlijent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovoVozilo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovoVozilo.Designer.cs">
+      <DependentUpon>NovoVozilo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopisKlijenata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopisKlijenata.Designer.cs">
+      <DependentUpon>PopisKlijenata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopisLokacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopisLokacija.Designer.cs">
+      <DependentUpon>PopisLokacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopisPrikolica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopisPrikolica.Designer.cs">
+      <DependentUpon>PopisPrikolica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopisRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopisRezervacija.Designer.cs">
+      <DependentUpon>PopisRezervacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopisVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopisVozila.Designer.cs">
+      <DependentUpon>PopisVozila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prikolice.cs">
+      <DependentUpon>NajamAutaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rezervacije.cs">
+      <DependentUpon>NajamAutaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vozila.cs">
+      <DependentUpon>NajamAutaModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GlavnaForma.resx">
+      <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaLokacija.resx">
+      <DependentUpon>NovaLokacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaPrikolica.resx">
+      <DependentUpon>NovaPrikolica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaRezervacija.resx">
+      <DependentUpon>NovaRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoviKlijent.resx">
+      <DependentUpon>NoviKlijent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovoVozilo.resx">
+      <DependentUpon>NovoVozilo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopisKlijenata.resx">
+      <DependentUpon>PopisKlijenata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopisLokacija.resx">
+      <DependentUpon>PopisLokacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopisPrikolica.resx">
+      <DependentUpon>PopisPrikolica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopisRezervacija.resx">
+      <DependentUpon>PopisRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopisVozila.resx">
+      <DependentUpon>PopisVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="NajamAutaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NajamAutaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NajamAutaModel.edmx.diagram">
+      <DependentUpon>NajamAutaModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Klijenti.datasource" />
+    <None Include="Properties\DataSources\Lokacije.datasource" />
+    <None Include="Properties\DataSources\Prikolice.datasource" />
+    <None Include="Properties\DataSources\Rezervacije.datasource" />
+    <None Include="Properties\DataSources\Vozila.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NajamAutaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NajamAutaModel.edmx</DependentUpon>
+      <LastGenOutput>NajamAutaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NajamAutaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NajamAutaModel.edmx</DependentUpon>
+      <LastGenOutput>NajamAutaModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

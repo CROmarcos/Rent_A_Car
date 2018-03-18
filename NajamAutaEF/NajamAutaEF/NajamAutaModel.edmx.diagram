@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="692150c18e7746198e5616a00806bcee" Name="Diagram1">
+        <EntityTypeShape EntityType="Rent_A_CarModel.Klijenti" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Rent_A_CarModel.Lokacije" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Rent_A_CarModel.Prikolice" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Rent_A_CarModel.Rezervacije" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Rent_A_CarModel.Vozila" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="Rent_A_CarModel.FK__Rezervaci__Klije__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="Rent_A_CarModel.FK__Rezervaci__Lokac__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="Rent_A_CarModel.FK__Rezervaci__Priko__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="Rent_A_CarModel.FK__Rezervaci__Vozil__71D1E811" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Rent_A_CarModelStoreContainer" CdmEntityContainer="RentacarEntities">
+    <EntitySetMapping Name="Klijenti">
+      <EntityTypeMapping TypeName="Rent_A_CarModel.Klijenti">
+        <MappingFragment StoreEntitySet="Klijenti">
+          <ScalarProperty Name="KlijentID" ColumnName="KlijentID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="GodinaRodjenja" ColumnName="GodinaRodjenja" />
+          <ScalarProperty Name="KategorijaBE" ColumnName="KategorijaBE" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobitel" ColumnName="Mobitel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lokacije">
+      <EntityTypeMapping TypeName="Rent_A_CarModel.Lokacije">
+        <MappingFragment StoreEntitySet="Lokacije">
+          <ScalarProperty Name="LokacijaID" ColumnName="LokacijaID" />
+          <ScalarProperty Name="Zupanija" ColumnName="Zupanija" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="CijenaDovoza" ColumnName="CijenaDovoza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prikolice">
+      <EntityTypeMapping TypeName="Rent_A_CarModel.Prikolice">
+        <MappingFragment StoreEntitySet="Prikolice">
+          <ScalarProperty Name="PrikolicaID" ColumnName="PrikolicaID" />
+          <ScalarProperty Name="TipPrikolice" ColumnName="TipPrikolice" />
+          <ScalarProperty Name="BrojOsovina" ColumnName="BrojOsovina" />
+          <ScalarProperty Name="DnevniNajam" ColumnName="DnevniNajam" />
+          <ScalarProperty Name="PotrebaBE" ColumnName="PotrebaBE" />
+          <ScalarProperty Name="Rezervirana" ColumnName="Rezervirana" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rezervacije">
+      <EntityTypeMapping TypeName="Rent_A_CarModel.Rezervacije">
+        <MappingFragment StoreEntitySet="Rezervacije">
+          <ScalarProperty Name="RezervacijaID" ColumnName="RezervacijaID" />
+          <ScalarProperty Name="Klijent" ColumnName="Klijent" />
+          <ScalarProperty Name="Lokacija" ColumnName="Lokacija" />
+          <ScalarProperty Name="Vozilo" ColumnName="Vozilo" />
+          <ScalarProperty Name="Prikolica" ColumnName="Prikolica" />
+          <ScalarProperty Name="PocetakPosudbe" ColumnName="PocetakPosudbe" />
+          <ScalarProperty Name="IstekPosudbe" ColumnName="IstekPosudbe" />
+          <ScalarProperty Name="CijenaPosudbe" ColumnName="CijenaPosudbe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vozila">
+      <EntityTypeMapping TypeName="Rent_A_CarModel.Vozila">
+        <MappingFragment StoreEntitySet="Vozila">
+          <ScalarProperty Name="VoziloID" ColumnName="VoziloID" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Godiste" ColumnName="Godiste" />
+          <ScalarProperty Name="Gorivo" ColumnName="Gorivo" />
+          <ScalarProperty Name="BrojSjedala" ColumnName="BrojSjedala" />
+          <ScalarProperty Name="Kuka" ColumnName="Kuka" />
+          <ScalarProperty Name="DnevniNajam" ColumnName="DnevniNajam" />
+          <ScalarProperty Name="Rezerviran" ColumnName="Rezerviran" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

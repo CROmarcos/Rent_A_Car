@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Rent_A_CarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Klijenti">
+    <Key>
+      <PropertyRef Name="KlijentID" />
+    </Key>
+    <Property Name="KlijentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Prezime" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="GodinaRodjenja" Type="int" Nullable="false" />
+    <Property Name="KategorijaBE" Type="bit" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Mobitel" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Lokacije">
+    <Key>
+      <PropertyRef Name="LokacijaID" />
+    </Key>
+    <Property Name="LokacijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Zupanija" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Grad" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Adresa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CijenaDovoza" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prikolice">
+    <Key>
+      <PropertyRef Name="PrikolicaID" />
+    </Key>
+    <Property Name="PrikolicaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipPrikolice" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BrojOsovina" Type="int" Nullable="false" />
+    <Property Name="DnevniNajam" Type="money" Nullable="false" />
+    <Property Name="PotrebaBE" Type="bit" Nullable="false" />
+    <Property Name="Rezervirana" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rezervacije">
+    <Key>
+      <PropertyRef Name="RezervacijaID" />
+    </Key>
+    <Property Name="RezervacijaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Klijent" Type="int" Nullable="false" />
+    <Property Name="Lokacija" Type="int" Nullable="false" />
+    <Property Name="Vozilo" Type="int" Nullable="false" />
+    <Property Name="Prikolica" Type="int" />
+    <Property Name="PocetakPosudbe" Type="date" Nullable="false" />
+    <Property Name="IstekPosudbe" Type="date" Nullable="false" />
+    <Property Name="CijenaPosudbe" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vozila">
+    <Key>
+      <PropertyRef Name="VoziloID" />
+    </Key>
+    <Property Name="VoziloID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marka" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Godiste" Type="int" Nullable="false" />
+    <Property Name="Gorivo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BrojSjedala" Type="int" Nullable="false" />
+    <Property Name="Kuka" Type="bit" Nullable="false" />
+    <Property Name="DnevniNajam" Type="money" Nullable="false" />
+    <Property Name="Rezerviran" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Rezervaci__Klije__6FE99F9F">
+    <End Role="Klijenti" Type="Self.Klijenti" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijenti">
+        <PropertyRef Name="KlijentID" />
+      </Principal>
+      <Dependent Role="Rezervacije">
+        <PropertyRef Name="Klijent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rezervaci__Lokac__70DDC3D8">
+    <End Role="Lokacije" Type="Self.Lokacije" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lokacije">
+        <PropertyRef Name="LokacijaID" />
+      </Principal>
+      <Dependent Role="Rezervacije">
+        <PropertyRef Name="Lokacija" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rezervaci__Priko__72C60C4A">
+    <End Role="Prikolice" Type="Self.Prikolice" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prikolice">
+        <PropertyRef Name="PrikolicaID" />
+      </Principal>
+      <Dependent Role="Rezervacije">
+        <PropertyRef Name="Prikolica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rezervaci__Vozil__71D1E811">
+    <End Role="Vozila" Type="Self.Vozila" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vozila">
+        <PropertyRef Name="VoziloID" />
+      </Principal>
+      <Dependent Role="Rezervacije">
+        <PropertyRef Name="Vozilo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Rent_A_CarModelStoreContainer">
+    <EntitySet Name="Klijenti" EntityType="Self.Klijenti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lokacije" EntityType="Self.Lokacije" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prikolice" EntityType="Self.Prikolice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rezervacije" EntityType="Self.Rezervacije" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vozila" EntityType="Self.Vozila" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Rezervaci__Klije__6FE99F9F" Association="Self.FK__Rezervaci__Klije__6FE99F9F">
+      <End Role="Klijenti" EntitySet="Klijenti" />
+      <End Role="Rezervacije" EntitySet="Rezervacije" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rezervaci__Lokac__70DDC3D8" Association="Self.FK__Rezervaci__Lokac__70DDC3D8">
+      <End Role="Lokacije" EntitySet="Lokacije" />
+      <End Role="Rezervacije" EntitySet="Rezervacije" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rezervaci__Priko__72C60C4A" Association="Self.FK__Rezervaci__Priko__72C60C4A">
+      <End Role="Prikolice" EntitySet="Prikolice" />
+      <End Role="Rezervacije" EntitySet="Rezervacije" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rezervaci__Vozil__71D1E811" Association="Self.FK__Rezervaci__Vozil__71D1E811">
+      <End Role="Vozila" EntitySet="Vozila" />
+      <End Role="Rezervacije" EntitySet="Rezervacije" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
