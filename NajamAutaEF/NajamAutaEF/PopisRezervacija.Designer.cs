@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rezervacijeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvRezervacije = new System.Windows.Forms.DataGridView();
             this.rezervacijaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klijentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lokacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,18 +42,19 @@
             this.lokacijeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prikoliceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vozilaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rezervacijeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnIzvjestaj = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezervacijeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvRezervacije
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRezervacije.AllowUserToAddRows = false;
+            this.dgvRezervacije.AllowUserToDeleteRows = false;
+            this.dgvRezervacije.AutoGenerateColumns = false;
+            this.dgvRezervacije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRezervacije.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rezervacijaIDDataGridViewTextBoxColumn,
             this.klijentDataGridViewTextBoxColumn,
             this.lokacijaDataGridViewTextBoxColumn,
@@ -67,17 +67,13 @@
             this.lokacijeDataGridViewTextBoxColumn,
             this.prikoliceDataGridViewTextBoxColumn,
             this.vozilaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.rezervacijeBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(598, 150);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // rezervacijeBindingSource
-            // 
-            this.rezervacijeBindingSource.DataSource = typeof(NajamAutaEF.Rezervacije);
+            this.dgvRezervacije.DataSource = this.rezervacijeBindingSource;
+            this.dgvRezervacije.Location = new System.Drawing.Point(13, 13);
+            this.dgvRezervacije.Name = "dgvRezervacije";
+            this.dgvRezervacije.ReadOnly = true;
+            this.dgvRezervacije.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRezervacije.Size = new System.Drawing.Size(598, 150);
+            this.dgvRezervacije.TabIndex = 0;
             // 
             // rezervacijaIDDataGridViewTextBoxColumn
             // 
@@ -173,6 +169,10 @@
             this.vozilaDataGridViewTextBoxColumn.ReadOnly = true;
             this.vozilaDataGridViewTextBoxColumn.Visible = false;
             // 
+            // rezervacijeBindingSource
+            // 
+            this.rezervacijeBindingSource.DataSource = typeof(NajamAutaEF.Rezervacije);
+            // 
             // btnIzvjestaj
             // 
             this.btnIzvjestaj.Location = new System.Drawing.Point(243, 183);
@@ -189,10 +189,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 226);
             this.Controls.Add(this.btnIzvjestaj);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvRezervacije);
             this.Name = "PopisRezervacija";
             this.Text = "PopisRezervacija";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.PopisRezervacija_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezervacijeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -200,7 +201,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRezervacije;
         private System.Windows.Forms.DataGridViewTextBoxColumn rezervacijaIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn klijentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lokacijaDataGridViewTextBoxColumn;

@@ -27,5 +27,39 @@ namespace NajamAutaEF
         public virtual Lokacije Lokacije { get; set; }
         public virtual Prikolice Prikolice { get; set; }
         public virtual Vozila Vozila { get; set; }
+
+        public decimal IzracunajCijenu()
+        {
+            decimal brojDana = Convert.ToDecimal((IstekPosudbe - PocetakPosudbe).TotalDays);
+            decimal dovoz = 0, najamAuta = 0, najamPrikolice = 0;
+            using (var db = new RentacarEntities())
+            {
+                foreach (var item in db.Lokacije)
+                {
+                    if (this.Lokacija == item.LokacijaID)
+                    {
+                        dovoz = item.CijenaDovoza;
+                    }
+                }
+                foreach (var item in db.Vozila)
+                {
+                    if (this.Vozilo == item.VoziloID)
+                    {
+                        najamAuta = item.DnevniNajam;
+                    }
+                }
+                if (Prikolica != null)
+                {
+                    foreach (var item in db.Prikolice)
+                    {
+                        if (this.Prikolica == item.PrikolicaID)
+                        {
+                            najamPrikolice = item.DnevniNajam;
+                        }
+                    }
+                }
+                return dovoz + brojDana * (najamAuta + najamPrikolice);
+            }
+        }
     }
 }

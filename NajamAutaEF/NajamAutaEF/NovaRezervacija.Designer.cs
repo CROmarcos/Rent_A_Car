@@ -44,6 +44,8 @@
             this.prikolicaComboBox = new System.Windows.Forms.ComboBox();
             this.prikoliceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.istekPosudbeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.btnSpremi = new System.Windows.Forms.Button();
+            this.btnOdustani = new System.Windows.Forms.Button();
             klijentLabel = new System.Windows.Forms.Label();
             voziloLabel = new System.Windows.Forms.Label();
             lokacijaLabel = new System.Windows.Forms.Label();
@@ -110,6 +112,7 @@
             this.klijentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rezervacijeBindingSource, "Klijent", true));
             this.klijentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rezervacijeBindingSource, "Klijent", true));
             this.klijentComboBox.DataSource = this.klijentiBindingSource;
+            this.klijentComboBox.DisplayMember = "Prezime";
             this.klijentComboBox.FormattingEnabled = true;
             this.klijentComboBox.Location = new System.Drawing.Point(109, 12);
             this.klijentComboBox.Name = "klijentComboBox";
@@ -126,6 +129,7 @@
             this.voziloComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rezervacijeBindingSource, "Vozilo", true));
             this.voziloComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rezervacijeBindingSource, "Vozilo", true));
             this.voziloComboBox.DataSource = this.vozilaBindingSource;
+            this.voziloComboBox.DisplayMember = "Model";
             this.voziloComboBox.FormattingEnabled = true;
             this.voziloComboBox.Location = new System.Drawing.Point(109, 66);
             this.voziloComboBox.Name = "voziloComboBox";
@@ -179,11 +183,33 @@
             this.istekPosudbeDateTimePicker.Size = new System.Drawing.Size(196, 20);
             this.istekPosudbeDateTimePicker.TabIndex = 9;
             // 
+            // btnSpremi
+            // 
+            this.btnSpremi.Location = new System.Drawing.Point(56, 157);
+            this.btnSpremi.Name = "btnSpremi";
+            this.btnSpremi.Size = new System.Drawing.Size(91, 35);
+            this.btnSpremi.TabIndex = 10;
+            this.btnSpremi.Text = "Spremi";
+            this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
+            // 
+            // btnOdustani
+            // 
+            this.btnOdustani.Location = new System.Drawing.Point(167, 157);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(91, 35);
+            this.btnOdustani.TabIndex = 11;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
+            // 
             // NovaRezervacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 265);
+            this.ClientSize = new System.Drawing.Size(319, 208);
+            this.Controls.Add(this.btnOdustani);
+            this.Controls.Add(this.btnSpremi);
             this.Controls.Add(istekPosudbeLabel);
             this.Controls.Add(this.istekPosudbeDateTimePicker);
             this.Controls.Add(prikolicaLabel);
@@ -219,5 +245,7 @@
         private System.Windows.Forms.ComboBox prikolicaComboBox;
         private System.Windows.Forms.BindingSource prikoliceBindingSource;
         private System.Windows.Forms.DateTimePicker istekPosudbeDateTimePicker;
+        private System.Windows.Forms.Button btnSpremi;
+        private System.Windows.Forms.Button btnOdustani;
     }
 }

@@ -40,5 +40,30 @@ namespace NajamAutaEF
         {
             PopuniCombobox();
         }
+
+        private void btnSpremi_Click(object sender, EventArgs e)
+        {
+            using (var db = new RentacarEntities())
+            {
+                Rezervacije rezervacija = new Rezervacije
+                {
+                    Klijent = int.Parse(klijentComboBox.SelectedItem.ToString()),
+                    Lokacija = int.Parse(lokacijaComboBox.SelectedItem.ToString()),
+                    Vozilo = int.Parse(voziloComboBox.SelectedItem.ToString()),
+                    Prikolica = null,
+                    PocetakPosudbe = DateTime.Today.Date,
+                    IstekPosudbe = istekPosudbeDateTimePicker.Value.Date
+                };
+                rezervacija.CijenaPosudbe = rezervacija.IzracunajCijenu();
+                db.Rezervacije.Add(rezervacija);
+                db.SaveChanges();
+            }
+            Close();
+        }
+
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
