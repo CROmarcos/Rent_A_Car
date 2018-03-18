@@ -36,6 +36,7 @@ namespace NajamAutaEF
         {
             NovoVozilo forma = new NovoVozilo();
             forma.ShowDialog();
+            PrikaziVozila();
         }
 
         private void btnObrisiAuto_Click(object sender, EventArgs e)
