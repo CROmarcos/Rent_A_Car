@@ -33,11 +33,9 @@ namespace NajamAutaEF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rezervacije> Rezervacije { get; set; }
 
-        public string NazivAuta { get; set; }
-
-        public void Ucitaj()
+        public string Ucitaj()
         {
-            NazivAuta = Marka + " " + Model;
+            return Marka + " " + Model;
         }
     }
 }

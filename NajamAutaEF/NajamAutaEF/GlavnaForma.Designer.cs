@@ -34,7 +34,6 @@
             this.btnKlijenti = new System.Windows.Forms.Button();
             this.btnNovaRezervacija = new System.Windows.Forms.Button();
             this.btnPopisRezervacija = new System.Windows.Forms.Button();
-            this.abcd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLokacije
@@ -103,7 +102,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(383, 335);
-            this.Controls.Add(this.abcd);
             this.Controls.Add(this.btnPopisRezervacija);
             this.Controls.Add(this.btnNovaRezervacija);
             this.Controls.Add(this.btnKlijenti);
@@ -124,7 +122,6 @@
         private System.Windows.Forms.Button btnKlijenti;
         private System.Windows.Forms.Button btnNovaRezervacija;
         private System.Windows.Forms.Button btnPopisRezervacija;
-        private System.Windows.Forms.Button abcd;
     }
 }
 

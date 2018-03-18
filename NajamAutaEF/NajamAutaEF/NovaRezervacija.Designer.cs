@@ -110,7 +110,6 @@
             this.klijentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rezervacijeBindingSource, "Klijent", true));
             this.klijentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rezervacijeBindingSource, "Klijent", true));
             this.klijentComboBox.DataSource = this.klijentiBindingSource;
-            this.klijentComboBox.DisplayMember = "ImePrezime";
             this.klijentComboBox.FormattingEnabled = true;
             this.klijentComboBox.Location = new System.Drawing.Point(109, 12);
             this.klijentComboBox.Name = "klijentComboBox";
@@ -127,7 +126,6 @@
             this.voziloComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rezervacijeBindingSource, "Vozilo", true));
             this.voziloComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rezervacijeBindingSource, "Vozilo", true));
             this.voziloComboBox.DataSource = this.vozilaBindingSource;
-            this.voziloComboBox.DisplayMember = "NazivAuta";
             this.voziloComboBox.FormattingEnabled = true;
             this.voziloComboBox.Location = new System.Drawing.Point(109, 66);
             this.voziloComboBox.Name = "voziloComboBox";
